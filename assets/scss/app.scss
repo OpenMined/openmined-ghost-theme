@@ -2,8 +2,7 @@
 @import 'defaults';
 @import 'prism';
 
-#app {
-  @import 'header';
-  @import 'posts';
-  @import 'content';
-}
+@import 'header';
+@import 'posts';
+@import 'content';
+@import 'error';
