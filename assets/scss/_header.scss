@@ -1,3 +1,10 @@
+$header-bar-height: 10px;
+$header-logo-height: 40px;
+$header-items-some-size: 20px;
+$header-author-avatar-size: 48px;
+$header-subscribe-size: 32px;
+$header-author-some-size: 24px;
+
 #header {
   position: relative;
   padding: $large-space 0px;
@@ -9,7 +16,7 @@
     bottom: 0px;
     left: 0px;
     width: 100%;
-    height: 10px;
+    height: $header-bar-height;
     background: rgba($white, 0.25);
     z-index: -1;
     content: '';
@@ -36,7 +43,7 @@
       justify-content: space-between;
     }
     .header-logo {
-      height: 40px;
+      height: $header-logo-height;
       margin-bottom: $medium-space;
       @include tablet-up {
         margin-bottom: 0px;
@@ -68,8 +75,8 @@
         }
         a {
           display: block;
-          height: 20px;
-          width: 20px;
+          height: $header-items-some-size;
+          width: $header-items-some-size;
           opacity: 0.5;
           transition: opacity $anim-time $anim-func;
           &:hover {
@@ -88,8 +95,8 @@
         display: none;
         @include tablet-up {
           display: block;
-          width: 48px;
-          height: 48px;
+          width: $header-author-avatar-size;
+          height: $header-author-avatar-size;
           margin-right: $medium-space;
           position: relative;
           &:after {
@@ -119,8 +126,8 @@
       }
       .subscribe {
         display: block;
-        width: 32px;
-        height: 32px;
+        width: $header-subscribe-size;
+        height: $header-subscribe-size;
         margin-top: -2px;
         margin-left: $medium-space;
         opacity: 0.5;
@@ -147,8 +154,8 @@
         margin-right: $medium-space;
         a {
           display: block;
-          width: 24px;
-          height: 24px;
+          width: $header-author-some-size;
+          height: $header-author-some-size;
           opacity: 0.5;
           transition: opacity $anim-time $anim-func;
           &:hover {

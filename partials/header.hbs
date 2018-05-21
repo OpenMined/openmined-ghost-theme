@@ -4,20 +4,20 @@
     <div class="row">
       <div class="column small-12 header">
         <a href="{{ @blog.url }}" class="header-logo">
-          <img src="/assets/images/logo.svg" alt="OpenMined" />
+          <img src="{{ asset "images/logo.svg" }}" alt="OpenMined" />
         </a>
         <ul class="header-items">
           <li><a href="https://github.com/OpenMined/" target="_blank" rel="noopener">
-            <img src="/assets/images/github.svg" alt="Github" />
+            <img src="{{ asset "images/github.svg" }}" alt="Github" />
           </a></li>
           <li><a href="https://twitter.com/openminedorg" target="_blank" rel="noopener">
-            <img src="/assets/images/twitter.svg" alt="Twitter" />
+            <img src="{{ asset "images/twitter.svg" }}" alt="Twitter" />
           </a></li>
           <li><a href="https://www.youtube.com/c/openminedorg" target="_blank" rel="noopener">
-            <img src="/assets/images/youtube.svg" alt="YouTube" />
+            <img src="{{ asset "images/youtube.svg" }}" alt="YouTube" />
           </a></li>
           <li><a href="https://www.facebook.com/openminedorg" target="_blank" rel="noopener">
-            <img src="/assets/images/facebook.svg" alt="Facebook" />
+            <img src="{{ asset "images/facebook.svg" }}" alt="Facebook" />
           </a></li>
         </ul>
       </div>
@@ -25,62 +25,62 @@
     <div class="row">
       <div class="column small-12 medium-10 large-8 xlarge-6 header-content">
         <div class="avatar-title-subscribe">
-          {{#if profile_image }}
+          {{# if profile_image }}
             <div class="author-avatar">
               <img src="{{ profile_image }}" alt="{{ name }}" />
             </div>
-          {{/if}}
+          {{/ if }}
           <h1 class="title heading">
-            {{#is "index" }}
+            {{# is "index" }}
               {{ @blog.title }}
-            {{/is}}
-            {{#is "page, post" }}
+            {{/ is }}
+            {{# is "page, post" }}
               {{ title }}
-            {{/is}}
-            {{#is "tag, author" }}
+            {{/ is }}
+            {{# is "tag, author" }}
               {{ name }}
-            {{/is}}
+            {{/ is }}
           </h1>
-          {{#is "index, tag, author" }}
-            <a href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" class="subscribe" target="_blank" rel="noopener">
-              <img src="/assets/images/rss.svg" alt="Subscribe" />
+          {{# is "index, tag, author" }}
+            <a href="https://feedly.com/i/subscription/feed/{{ url absolute="true" }}rss/" class="subscribe" target="_blank" rel="noopener">
+              <img src="{{ asset "images/rss.svg" }}" alt="Subscribe" />
             </a>
-          {{/is}}
+          {{/ is }}
         </div>
         </h1>
         <div class="excerpt">
-          {{#is "index" }}
+          {{# is "index" }}
             {{ @blog.description }}
-          {{/is}}
-          {{#is "page, post" }}
+          {{/ is }}
+          {{# is "page, post" }}
             {{ excerpt }}
-          {{/is}}
-          {{#is "tag" }}
+          {{/ is }}
+          {{# is "tag" }}
             {{ description }}
-          {{/is}}
-          {{#is "author" }}
+          {{/ is }}
+          {{# is "author" }}
             {{ bio }}
-          {{/is}}
+          {{/ is }}
         </div>
-        {{#is "author" }}
+        {{# is "author" }}
           <ul class="author-social">
-            {{#if facebook }}
+            {{# if facebook }}
               <li><a href="{{ facebook }}" target="_blank" rel="noopener">
-                <img src="/assets/images/facebook.svg" alt="Facebook" />
+                <img src="{{ asset "images/facebook.svg" }}" alt="Facebook" />
               </a></li>
-            {{/if}}
-            {{#if twitter }}
+            {{/ if }}
+            {{# if twitter }}
               <li><a href="{{ twitter }}" target="_blank" rel="noopener">
-                <img src="/assets/images/twitter.svg" alt="Twitter" />
+                <img src="{{ asset "images/twitter.svg" }}" alt="Twitter" />
               </a></li>
-            {{/if}}
-            {{#if website }}
+            {{/ if }}
+            {{# if website }}
               <li><a href="{{ website }}" target="_blank" rel="noopener">
-                <img src="/assets/images/website.svg" alt="Website" />
+                <img src="{{ asset "images/website.svg" }}" alt="Website" />
               </a></li>
-            {{/if}}
+            {{/ if }}
           </ul>
-        {{/is}}
+        {{/ is }}
       </div>
     </div>
   </div>
