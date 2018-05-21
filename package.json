@@ -1,12 +1,12 @@
 {
-  "name": "openmined",
-  "description": "The theme for the OpenMined and Weekly Digs blogs.",
+  "name": "openmined-ghost-theme",
+  "description": "The theme for the OpenMined blog.",
   "demo": "https://blog.openmined.org",
   "version": "1.0.0",
   "engines": {
     "ghost": ">=1.2.0"
   },
-  "license": "MIT",
+  "license": "Apache 2.0",
   "screenshots": {
     "desktop": "assets/screenshot-desktop.jpg"
   },

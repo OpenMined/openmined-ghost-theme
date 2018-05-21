@@ -2,10 +2,7 @@
 
 The default theme for all OpenMined [Ghost](http://github.com/tryghost/ghost/) blogs. This is based heavily on the default Ghost theme [Casper](https://github.com/TryGhost/Casper).
 
-&nbsp;
-
 ![screenshot-desktop](assets/screenshot-desktop.jpg)
-
 
 # Development
 
@@ -18,15 +15,8 @@ $ yarn dev
 
 Now you can edit `/assets/scss/` files, which will be compiled to `/assets/built/` automatically.
 
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to the blog of your choice.
 
 ```bash
 $ yarn zip
 ```
-
-
-# SVG Icons
-
-This theme uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
-
-You can add your own SVG icons in the same manner.
