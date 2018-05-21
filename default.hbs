@@ -21,20 +21,18 @@
     {{{ body }}}
   </div>
 
-  <!-- TODO: Patrick, figure out pagination and infinitescroll -->
-  {{#if pagination.pages}}
+  {{# if pagination.pages }}
     <script>
       // maxPages is a global variable that is needed to determine
       // if we need to load more pages for the infinitescroll, or if
       // we reached the last page already.
-      var maxPages = parseInt('{{pagination.pages}}');
+      var maxPages = parseInt('{{ pagination.pages }}');
     </script>
-    <script src="{{asset "js/infinitescroll.js"}}"></script>
-  {{/if}}
+  {{/ if }}
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
-  <script src="{{asset "js/app.js"}}"></script>
+  <script src="{{ asset "js/app.js" }}"></script>
 
-  {{ghost_foot}}
+  {{ ghost_foot }}
 </body>
 </html>

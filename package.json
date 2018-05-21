@@ -21,20 +21,16 @@
   },
   "gpm": {
     "type": "theme",
-    "categories": [
-      "Minimal"
-    ]
+    "categories": ["Minimal"]
   },
-  "keywords": [
-    "openmined",
-    "theme"
-  ],
+  "keywords": ["openmined", "theme"],
   "repository": {
     "type": "git",
     "url": "https://github.com/OpenMined/openmined-ghost-theme.git"
   },
   "bugs": "https://github.com/OpenMined/openmined-ghost-theme/issues",
-  "contributors": "https://github.com/OpenMined/openmined-ghost-theme/graphs/contributors",
+  "contributors":
+    "https://github.com/OpenMined/openmined-ghost-theme/graphs/contributors",
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-autoprefixer": "^5.0.0",
@@ -46,7 +42,7 @@
     "gulp-zip": "4.0.0"
   },
   "config": {
-    "posts_per_page": 25
+    "posts_per_page": 24
   },
   "dependencies": {
     "normalize.css": "^8.0.0",
