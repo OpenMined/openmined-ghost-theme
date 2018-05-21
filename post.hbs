@@ -1,11 +1,10 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-{{> header this }}
+<!-- TODO: Patrick, use this file for pages as well, just do 'is post' for detection to show/hide certain elements -->
+
+{{> header }}
 
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
@@ -61,7 +60,7 @@ into the {body} of the default.hbs template --}}
                                         {{#if profile_image}}
                                             <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
                                         {{else}}
-                                            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+                                            <span class="avatar-wrapper"><img src="/assets/images/logo.svg" alt="SHOULD BE AN AVATAR" /></span>
                                         {{/if}}
                                         <h2>{{name}}</h2>
                                     </div>
@@ -78,7 +77,7 @@ into the {body} of the default.hbs template --}}
                                 {{#if profile_image}}
                                     <a href="{{url}}" class="moving-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
                                 {{else}}
-                                    <a href="{{url}}" class="moving-avatar"><span class="avatar-wrapper">{{> "icons/avatar"}}</span></a>
+                                    <a href="{{url}}" class="moving-avatar"><span class="avatar-wrapper"><img src="/assets/images/logo.svg" alt="SHOULD BE AN AVATAR" /></span></a>
                                 {{/if}}
 
                             </li>
@@ -98,7 +97,7 @@ into the {body} of the default.hbs template --}}
                         {{#if profile_image}}
                             <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
                         {{else}}
-                            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+                            <span class="avatar-wrapper"><img src="/assets/images/logo.svg" alt="SHOULD BE AN AVATAR" /></span>
                         {{/if}}
                         <section class="author-card-content">
                             <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
@@ -196,8 +195,5 @@ into the {body} of the default.hbs template --}}
         </div>
     </div>
 </aside>
-
-{{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{> floating-header}}
 
 {{/post}}
