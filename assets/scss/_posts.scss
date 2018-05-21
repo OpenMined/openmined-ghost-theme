@@ -36,27 +36,29 @@ $blog-post-height: 340px;
     z-index: -1;
     content: '';
   }
-  // TODO: Patrick, sort these our here for both blogs
-  /*
-  Maybe...
 
-  &.blog {
-    &.tutorials...
-    &.announcements...
-  }
-  &.digs {
-    &.private-ml...
-  }
-*/
+  // Blog tags
   &.tutorials {
-    @extend .success-diag-gradient;
-  }
-  &.digs {
     @extend .alert-diag-gradient;
   }
   &.announcements {
     @extend .primary-diag-gradient;
   }
+  // &.something-else {
+  //   @extend .success-diag-gradient;
+  // }
+
+  // Digs tags
+  &.private-ml {
+    @extend .success-diag-gradient;
+  }
+  // &.something-else {
+  //   @extend .alert-diag-gradient;
+  // }
+  // &.something-else {
+  //   @extend .primary-diag-gradient;
+  // }
+
   .title {
     color: $white;
     font-size: 1.25rem;
