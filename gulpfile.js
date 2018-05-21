@@ -23,7 +23,7 @@ gulp.task('build', ['sass'], function() {
 gulp.task('sass', function() {
   return gulp
     .src('assets/scss/*.scss')
-    .pipe(sass().on('error', swallowError))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', swallowError))
     .pipe(sourcemaps.init())
     .pipe(
       autoprefixer({
