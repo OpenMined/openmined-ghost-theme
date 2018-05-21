@@ -1,5 +1,52 @@
 <div id="header">
   <div class="background"></div>
-  <img src="/assets/images/logo.svg" alt="OpenMined" />
-  {{> site-nav }}
+  <div class="container">
+    <div class="row">
+      <div class="column small-12 header">
+        <a href="{{ @blog.url }}" class="header-logo">
+          <img src="/assets/images/logo.svg" alt="OpenMined" />
+        </a>
+        <ul class="header-items">
+          <li><a href="https://github.com/OpenMined/" target="_blank" rel="noopener">
+            <img src="/assets/images/github.svg" alt="Github" />
+          </a></li>
+          <li><a href="https://twitter.com/openminedorg" target="_blank" rel="noopener">
+            <img src="/assets/images/twitter.svg" alt="Twitter" />
+          </a></li>
+          <li><a href="https://www.youtube.com/c/openminedorg" target="_blank" rel="noopener">
+            <img src="/assets/images/youtube.svg" alt="YouTube" />
+          </a></li>
+          <li><a href="https://www.facebook.com/openminedorg" target="_blank" rel="noopener">
+            <img src="/assets/images/facebook.svg" alt="Facebook" />
+          </a></li>
+          <li><a class="rss-button" href="https://feedly.com/i/subscription/feed/{{ @blog.url }}/rss/" target="_blank" rel="noopener">
+            <img src="/assets/images/rss.svg" alt="RSS" />
+          </a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column small-12 medium-10 large-8 xlarge-6 header-content">
+        <h1 class="title heading">
+          {{#is "home, page, post" }}
+            {{ title }}
+          {{/is}}
+          {{#is "tag" }}
+            {{ name }}
+          {{/is}}
+        </h1>
+        <div class="excerpt">
+          {{#is "home" }}
+            {{ description }}
+          {{/is}}
+          {{#is "page, post" }}
+            {{ excerpt }}
+          {{/is}}
+          {{#is "tag" }}
+            {{ description }}
+          {{/is}}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,5 +1,4 @@
-$black: #000;
-$white: #fff;
+@import '../../node_modules/normalize.css/normalize.css';
 
-$body-font: 'Open Sans', sans-serif;
-$normal-weight: 400;
+@import '../../node_modules/openmined-ui/lib/variables.scss';
+@import '../../node_modules/openmined-ui/lib/grid/index.scss';

@@ -49,6 +49,7 @@
     "posts_per_page": 25
   },
   "dependencies": {
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "openmined-ui": "^0.0.6"
   }
 }
