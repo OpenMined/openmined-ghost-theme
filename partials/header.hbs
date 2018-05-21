@@ -1,25 +1,16 @@
 <div id="header">
-  <div class="background"></div>
+  {{# if feature_image }}
+    <div class="background feature-image" style="background-image: url({{ feature_image }});"></div>
+  {{ else }}
+    <div class="background"></div>
+  {{/ if }}
   <div class="container">
     <div class="row">
       <div class="column small-12 header">
         <a href="{{ @blog.url }}" class="header-logo">
           <img src="{{ asset "images/logo.svg" }}" alt="OpenMined" />
         </a>
-        <ul class="header-items">
-          <li><a href="https://github.com/OpenMined/" target="_blank" rel="noopener">
-            <img src="{{ asset "images/github.svg" }}" alt="Github" />
-          </a></li>
-          <li><a href="https://twitter.com/openminedorg" target="_blank" rel="noopener">
-            <img src="{{ asset "images/twitter.svg" }}" alt="Twitter" />
-          </a></li>
-          <li><a href="https://www.youtube.com/c/openminedorg" target="_blank" rel="noopener">
-            <img src="{{ asset "images/youtube.svg" }}" alt="YouTube" />
-          </a></li>
-          <li><a href="https://www.facebook.com/openminedorg" target="_blank" rel="noopener">
-            <img src="{{ asset "images/facebook.svg" }}" alt="Facebook" />
-          </a></li>
-        </ul>
+        {{> social-media }}
       </div>
     </div>
     <div class="row">
@@ -52,8 +43,11 @@
           {{# is "index" }}
             {{ @blog.description }}
           {{/ is }}
-          {{# is "page, post" }}
+          {{# is "page" }}
             {{ excerpt }}
+          {{/ is }}
+          {{# is "post" }}
+            Posted on {{ date format="MMMM Do, YYYY" }} under {{# primary_tag }}<a href="{{ url }}">{{ name }}</a>{{/ primary_tag }}
           {{/ is }}
           {{# is "tag" }}
             {{ description }}
@@ -63,23 +57,7 @@
           {{/ is }}
         </div>
         {{# is "author" }}
-          <ul class="author-social">
-            {{# if facebook }}
-              <li><a href="{{ facebook }}" target="_blank" rel="noopener">
-                <img src="{{ asset "images/facebook.svg" }}" alt="Facebook" />
-              </a></li>
-            {{/ if }}
-            {{# if twitter }}
-              <li><a href="{{ twitter }}" target="_blank" rel="noopener">
-                <img src="{{ asset "images/twitter.svg" }}" alt="Twitter" />
-              </a></li>
-            {{/ if }}
-            {{# if website }}
-              <li><a href="{{ website }}" target="_blank" rel="noopener">
-                <img src="{{ asset "images/website.svg" }}" alt="Website" />
-              </a></li>
-            {{/ if }}
-          </ul>
+          {{> author-social }}
         {{/ is }}
       </div>
     </div>

@@ -1,199 +1,74 @@
 {{!< default}}
 
-{{#post}}
-
-<!-- TODO: Patrick, use this file for pages as well, just do 'is post' for detection to show/hide certain elements -->
+{{# post }}
 
 {{> header }}
 
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-
-        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-
-            <header class="post-full-header">
-                <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-                    {{#primary_tag}}
-                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
-                </section>
-                <h1 class="post-full-title">{{title}}</h1>
-            </header>
-
-            {{#if feature_image}}
-            <figure class="post-full-image" style="background-image: url({{feature_image}})">
-            </figure>
-            {{/if}}
-
-            <section class="post-full-content">
-                {{content}}
-            </section>
-
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
-            </section>
-            {{/if}}
-
-            <footer class="post-full-footer">
-
-                {{!-- If there are multiple authors for the post, display all of their avatars in a stack --}}
-                {{#has author="count:>1"}}
-
-                    <section class="post-full-authors">
-
-                        <div class="post-full-authors-content">
-                            <p>This post was a collaboration between</p>
-                            <p>{{authors}}</p>
-                        </div>
-
-                        <ul class="author-list">
-                        {{#foreach authors}}
-                            <li class="author-list-item">
-
-                                <div class="author-card">
-                                    <div class="basic-info">
-                                        {{#if profile_image}}
-                                            <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-                                        {{else}}
-                                            <span class="avatar-wrapper"><img src="/assets/images/logo.svg" alt="SHOULD BE AN AVATAR" /></span>
-                                        {{/if}}
-                                        <h2>{{name}}</h2>
-                                    </div>
-                                    <div class="bio">
-                                        {{#if bio}}
-                                            <p>{{bio}}</p>
-                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
-                                        {{else}}
-                                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                                        {{/if}}
-                                    </div>
-                                </div>
-
-                                {{#if profile_image}}
-                                    <a href="{{url}}" class="moving-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
-                                {{else}}
-                                    <a href="{{url}}" class="moving-avatar"><span class="avatar-wrapper"><img src="/assets/images/logo.svg" alt="SHOULD BE AN AVATAR" /></span></a>
-                                {{/if}}
-
-                            </li>
-                        {{/foreach}}
-
-                        </ul>
-
-                    </section>
-
-                {{!-- If there is a single author for the post, display her/his information  --}}
-                {{else}}
-
-                    {{!-- Everything inside the #author tags pulls data from the author --}}
-                    {{#author}}
-
-                    <section class="author-card">
-                        {{#if profile_image}}
-                            <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-                        {{else}}
-                            <span class="avatar-wrapper"><img src="/assets/images/logo.svg" alt="SHOULD BE AN AVATAR" /></span>
-                        {{/if}}
-                        <section class="author-card-content">
-                            <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
-                            {{#if bio}}
-                                <p>{{bio}}</p>
-                            {{else}}
-                                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                            {{/if}}
-                        </section>
-                    </section>
-                    <div class="post-full-footer-right">
-                        <a class="author-card-button" href="{{url}}">Read More</a>
-                    </div>
-
-                    {{/author}}
-                {{/has}}
-
-            </footer>
-
-            {{!--
-
-            If you use Disqus comments, just uncomment this block.
-            The only thing you need to change is "test-apkdzgmqhj" - which
-            should be replaced with your own Disqus site-id.
-
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-                    var disqus_config = function () {
-                        this.page.url = '{{url absolute="true"}}';
-                        this.page.identifier = 'ghost-{{comment_id}}';
-                    };
-                    (function() {
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-            </section>
-            --}}
-
-        </article>
-
+<div id="content" class="container">
+  <div class="row post">
+    <div class="column small-12">
+      {{ content }}
     </div>
-</main>
-
-{{!-- Links to Previous/Next posts --}}
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
-            {{#if primary_tag}}
-            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
-                {{#if related_posts}}
-                <article class="read-next-card"
-                    {{#if ../primary_tag.feature_image}}
-                        style="background-image: url({{../primary_tag.feature_image}})"
-                    {{else}}
-                        {{#if @blog.cover_image}}
-                            style="background-image: url({{@blog.cover_image}})"{{/if}}
-                    {{/if}}
-                >
-                    <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small>
-                        {{#../primary_tag}}
-                        <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
-                        {{/../primary_tag}}
-                    </header>
-                    <div class="read-next-divider">{{> "icons/infinity"}}</div>
-                    <div class="read-next-card-content">
-                        <ul>
-                            {{#foreach related_posts}}
-                            <li><a href="{{url}}">{{title}}</a></li>
-                            {{/foreach}}
-                        </ul>
-                    </div>
-                    <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
-                    </footer>
-                </article>
-                {{/if}}
-            {{/get}}
-            {{/if}}
-
-            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#next_post}}
-                {{> "post-card"}}
-            {{/next_post}}
-
-            {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#prev_post}}
-                {{> "post-card"}}
-            {{/prev_post}}
-
-        </div>
+  </div>
+  {{# is "post" }}
+  <div class="row authors">
+    <div class="column small-12 large-8 xlarge-6">
+      <ul>
+        <li>This post was written by:</li>
+        {{# foreach authors }}
+          <li>
+            <a href="{{ url }}">
+              <div class="author-avatar">
+                {{# if profile_image }}
+                  <img src="{{ profile_image }}" alt="{{ name }}" />
+                {{ else }}
+                  <img src="{{ asset "images/avatar.svg" }}" alt="{{ name }}" />
+                {{/ if }}
+              </div>
+              <div class="metadata">
+                <h4>{{ name }}</h4>
+                <p>{{ bio }}
+              </div>
+            </a>
+          </li>
+        {{/ foreach }}
+      </ul>
     </div>
-</aside>
+  </div>
+  <div class="row prev-next">
+    {{#next_post}}
+      <div class="column small-12 large-6 xlarge-4">
+        <h5>Previous post</h5>
+        {{> post-card condensed="true" }}
+      </div>
+    {{/next_post}}
+    {{#prev_post}}
+      <div class="column small-12 large-6 xlarge-4">
+        <h5>Next post</h5>
+        {{> post-card condensed="true" }}
+      </div>
+    {{/prev_post}}
+  </div>
+  <div class="row comments">
+    <div class="column small-12 large-8 large-offset-2">
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = '{{ url absolute="true" }}';
+          this.page.identifier = 'ghost-{{ comment_id }}';
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://openmined.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    </div>
+  </div>
+  {{/ is }}
+</div>
 
-{{/post}}
+{{/ post }}
+
+<script src="{{asset "js/prism.js"}}"></script>
