@@ -37,6 +37,11 @@
               <img src="{{ asset "images/rss.svg" }}" alt="Subscribe" />
             </a>
           {{/ is }}
+          {{# is "page, post" }}
+            <a href="https://feedly.com/i/subscription/feed/{{ @blog.url }}rss/" class="subscribe" target="_blank" rel="noopener">
+              <img src="{{ asset "images/rss.svg" }}" alt="Subscribe" />
+            </a>
+          {{/ is }}
         </div>
         </h1>
         <div class="excerpt">
