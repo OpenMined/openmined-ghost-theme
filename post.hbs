@@ -20,9 +20,9 @@
             <a href="{{ url }}">
               <div class="author-avatar">
                 {{# if profile_image }}
-                  <img src="{{ profile_image }}" alt="{{ name }}" />
+                  <div style="background-image: url({{ profile_image }});"></div>
                 {{ else }}
-                  <img src="{{ asset "images/avatar.svg" }}" alt="{{ name }}" />
+                  <div style="background-image: url({{ asset "images/avatar.svg" }});"></div>
                 {{/ if }}
               </div>
               <div class="metadata">
