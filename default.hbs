@@ -32,6 +32,19 @@
   {{/ if }}
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+  <script>
+    MathJax.Hub.Config({
+      jax: ['input/TeX', 'output/HTML-CSS'],
+      extensions: ['tex2jax.js'],
+      tex2jax: {
+        inlineMath: [ ['\\(','\\)'] ],
+        displayMath: [ ['$$','$$'] ]
+      }
+    });
+  </script>
+
   <script src="{{ asset "js/app.js" }}"></script>
 
   {{ ghost_foot }}

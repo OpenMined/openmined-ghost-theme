@@ -32,3 +32,10 @@ body {
 
   overflow-x: hidden;
 }
+
+// MathJAX support (make sure that block elements align left)
+.kg-card-markdown {
+  .MathJax_Display {
+    text-align: left !important;
+  }
+}
