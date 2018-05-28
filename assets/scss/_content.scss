@@ -24,18 +24,44 @@
         margin: $large-space auto;
       }
       & ~ small {
-        margin-top: -$large-space;
+        margin-top: 0px;
+        margin-bottom: $medium-space;
         display: block;
         text-align: center;
         @include desktop-up {
-          margin-top: -$large-space - $medium-space;
+          margin-top: -$medium-space;
+          margin-bottom: $large-space;
         }
       }
     }
-    table {
-      margin: $medium-space auto;
-      @include desktop-up {
-        margin: $large-space auto;
+    .responsive-table {
+      overflow-x: auto;
+      table {
+        border-collapse: collapse;
+        border: 1px solid $light-gray;
+        margin: $medium-space auto;
+        @include desktop-up {
+          margin: $large-space auto;
+          border: none;
+          box-shadow: 0px $small-space $medium-space rgba($black, 0.1);
+        }
+        td,
+        th {
+          padding: $small-space $medium-space;
+        }
+        thead {
+          background: $dark-gray;
+          color: $white;
+        }
+        tbody {
+          tr:nth-child(even) {
+            background: $white;
+          }
+        }
+      }
+      & ~ small {
+        display: block;
+        text-align: center;
       }
     }
     hr {
