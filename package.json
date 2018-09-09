@@ -27,7 +27,8 @@
   },
   "keywords": [
     "openmined",
-    "theme"
+    "theme",
+    "ghost-theme"
   ],
   "repository": {
     "type": "git",

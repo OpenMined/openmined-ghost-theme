@@ -1,3 +1,8 @@
+// TODO: Ghost 2.0 theme support
+.kg-gallery-container, .kg-gallery-row, .kg-gallery-image {
+  display: inherit;
+}
+
 #content {
   .post {
     line-height: 2rem;
@@ -15,22 +20,35 @@
       padding-top: $small-space;
       @extend .not-capped;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: $medium-space auto;
+    .kg-image-card, .kg-embed-card {
+      margin: $medium-space 0px;
       @include desktop-up {
-        margin: $large-space auto;
+        margin: $large-space 0px;
+        &.kg-width-wide img {
+          max-width: 80%;
+        }
+        &.kg-width-full img {
+          max-width: 100%;
+        }
       }
-      & ~ small {
-        margin-top: 0px;
-        margin-bottom: $medium-space;
+      img {
+        max-width: 100%;
+        height: auto;
         display: block;
-        text-align: center;
+        margin: $medium-space auto;
         @include desktop-up {
-          margin-top: -$medium-space;
-          margin-bottom: $large-space;
+          max-width: 60%;
+          margin: $large-space auto;
+        }
+        & ~ figcaption {
+          margin-top: 0px;
+          margin-bottom: $medium-space;
+          display: block;
+          text-align: center;
+          @include desktop-up {
+            margin-top: -$medium-space;
+            margin-bottom: $large-space;
+          }
         }
       }
     }
