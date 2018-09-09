@@ -20,6 +20,26 @@
       padding-top: $small-space;
       @extend .not-capped;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: $medium-space auto;
+      @include desktop-up {
+        max-width: 60%;
+        margin: $large-space auto;
+      }
+      & ~ figcaption, & ~ small {
+        margin-top: 0px;
+        margin-bottom: $medium-space;
+        display: block;
+        text-align: center;
+        @include desktop-up {
+          margin-top: -$medium-space;
+          margin-bottom: $large-space;
+        }
+      }
+    }
     .kg-image-card, .kg-embed-card {
       margin: $medium-space 0px;
       @include desktop-up {
@@ -29,26 +49,6 @@
         }
         &.kg-width-full img {
           max-width: 100%;
-        }
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: $medium-space auto;
-        @include desktop-up {
-          max-width: 60%;
-          margin: $large-space auto;
-        }
-        & ~ figcaption {
-          margin-top: 0px;
-          margin-bottom: $medium-space;
-          display: block;
-          text-align: center;
-          @include desktop-up {
-            margin-top: -$medium-space;
-            margin-bottom: $large-space;
-          }
         }
       }
     }
