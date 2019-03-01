@@ -19,7 +19,7 @@ $header-author-some-size: 24px;
     height: $header-bar-height;
     background: rgba($white, 0.25);
     z-index: -1;
-    content: '';
+    content: "";
   }
   .background {
     position: absolute;
@@ -28,7 +28,7 @@ $header-author-some-size: 24px;
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: url('../images/background-gradient.svg');
+    background: url("../images/background-gradient.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -39,7 +39,7 @@ $header-author-some-size: 24px;
       width: 100%;
       height: 100%;
       background: rgba($black, 0.5);
-      content: '';
+      content: "";
     }
   }
   .header {
@@ -116,7 +116,7 @@ $header-author-some-size: 24px;
             height: 100%;
             border: 3px solid rgba($white, 0.5);
             border-radius: $round-radius;
-            content: '';
+            content: "";
           }
           div {
             position: absolute;
@@ -157,6 +157,12 @@ $header-author-some-size: 24px;
       @include tablet-up {
         font-size: 1.1rem;
         line-height: 2.2rem;
+      }
+      @include desktop-up {
+        max-width: 60%;
+      }
+      @include widescreen-up {
+        max-width: 50%;
       }
       a {
         font-weight: $bold-weight;

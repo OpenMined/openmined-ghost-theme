@@ -2,7 +2,7 @@
   "name": "openmined-ghost-theme",
   "description": "The theme for the OpenMined blog.",
   "demo": "https://blog.openmined.org",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "ghost": ">=1.2.0"
   },

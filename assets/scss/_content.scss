@@ -1,5 +1,7 @@
 // TODO: Ghost 2.0 theme support
-.kg-gallery-container, .kg-gallery-row, .kg-gallery-image {
+.kg-gallery-container,
+.kg-gallery-row,
+.kg-gallery-image {
   display: inherit;
 }
 
@@ -26,10 +28,10 @@
       display: block;
       margin: $medium-space auto;
       @include desktop-up {
-        max-width: 60%;
         margin: $large-space auto;
       }
-      & ~ figcaption, & ~ small {
+      & ~ figcaption,
+      & ~ small {
         margin-top: 0px;
         margin-bottom: $medium-space;
         display: block;
@@ -40,7 +42,8 @@
         }
       }
     }
-    .kg-image-card, .kg-embed-card {
+    .kg-image-card,
+    .kg-embed-card {
       margin: $medium-space 0px;
       @include desktop-up {
         margin: $large-space 0px;
@@ -87,7 +90,7 @@
       border-top: 1px solid $light-gray;
       margin: $medium-space auto;
       @include desktop-up {
-        width: 35%;
+        width: 50%;
         margin: $xlarge-space auto;
       }
     }
@@ -136,7 +139,7 @@
           height: 100%;
           border: 3px solid rgba($white, 0.5);
           border-radius: $round-radius;
-          content: '';
+          content: "";
         }
         div {
           position: absolute;
