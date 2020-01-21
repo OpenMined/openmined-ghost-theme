@@ -44,7 +44,8 @@
     "gulp-sourcemaps": "1.6.0",
     "gulp-util": "3.0.7",
     "gulp-watch": "4.3.8",
-    "gulp-zip": "4.0.0"
+    "gulp-zip": "4.0.0",
+    "natives": "^1.1.6"
   },
   "config": {
     "posts_per_page": 24

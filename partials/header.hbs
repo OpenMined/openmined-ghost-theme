@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="column small-12 header">
-        <a href="{{ @blog.url }}" class="header-logo">
+        <a href="{{ @site.url }}" class="header-logo">
           <img src="{{ asset "images/logo.svg" }}" alt="OpenMined" />
         </a>
         {{> social-media }}
@@ -23,7 +23,7 @@
           {{/ if }}
           <h1 class="title heading">
             {{# is "index" }}
-            {{ @blog.title }}
+            {{ @site.title }}
             {{/ is }}
             {{# is "page, post" }}
             {{ title }}
@@ -39,7 +39,7 @@
           </a>
           {{/ is }}
           {{# is "page, post" }}
-          <a href="https://feedly.com/i/subscription/feed/{{ @blog.url }}/rss/" class="subscribe" target="_blank"
+          <a href="https://feedly.com/i/subscription/feed/{{ @site.url }}/rss/" class="subscribe" target="_blank"
             rel="noopener">
             <img src="{{ asset "images/rss.svg" }}" alt="Subscribe" />
           </a>
@@ -48,7 +48,7 @@
         </h1>
         <div class="excerpt">
           {{# is "index" }}
-          {{ @blog.description }}
+          {{ @site.description }}
           {{/ is }}
           {{# is "page" }}
           {{ excerpt }}
