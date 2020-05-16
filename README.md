@@ -1,3 +1,7 @@
+# DEPRECATION NOTICE
+
+Warning, this repository will soon be deprecated in favor of [openmined-website](https://github.com/OpenMined/openmined-website).
+
 # OpenMined
 
 The default theme for all OpenMined [Ghost](http://github.com/tryghost/ghost/) blogs. This is based heavily on the default Ghost theme [Casper](https://github.com/TryGhost/Casper).
